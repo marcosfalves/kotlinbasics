@@ -1,5 +1,6 @@
 package br.com.mfalves.model
 
+import java.util.function.Predicate
 import kotlin.jvm.internal.Intrinsics
 
 data class Person(
@@ -25,8 +26,20 @@ data class Person(
 }
 
 fun main() {
-    val person1 = Person(1L, "Marcos", "Ferreira Alves", "Brasil")
+    val person1 = Person(1L, "José", "da Silva", "Brasil")
     val person2 = Person(1L, "Marcos ", "Ferreira Alves", "Brasil")
+    val person3 = Person(1L, "João", "Oliveira", "Brasil")
+    val person4 = Person(1L, "Maria", "Alves", "Brasil")
+
+    val listPerson: List<Person> = mutableListOf(person1, person2, person3, person4)
+
+    listPerson.stream()
+        .filter{t -> t.lastName.contains("Alves")}
+        .map{ it.lastName }
+        .forEach { it -> println(it.uppercase())}
+
+
+
 
     println(person1 == person2)
 
