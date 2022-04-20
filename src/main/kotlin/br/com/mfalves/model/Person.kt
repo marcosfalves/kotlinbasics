@@ -27,7 +27,7 @@ data class Person(
 
 fun main() {
     val person1 = Person(1L, "José", "da Silva", "Brasil")
-    val person2 = Person(1L, "Marcos ", "Ferreira Alves", "Brasil")
+    val person2 = Person(1L, "Marcos", "Ferreira Alves", "Brasil")
     val person3 = Person(1L, "João", "Oliveira", "Brasil")
     val person4 = Person(1L, "Maria", "Alves", "Brasil")
 
@@ -38,8 +38,9 @@ fun main() {
         .map{ it.lastName }
         .forEach { it -> println(it.uppercase())}
 
-
-
+    listPerson.isEmpty();
+    listPerson.first();
+    listPerson.last();
 
     println(person1 == person2)
 
